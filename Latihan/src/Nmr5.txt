@@ -1,0 +1,10 @@
+Error "cannot find symbol" terjadi karena variabel alat1 dideklarasi dengan tipe PerangkatPintar, 
+sehingga saat proses menjalankan Java hanya mengenali method yang ada di dalam class itu. 
+dan method aturKecerahan() cuma di class LampuPintar dan gaada di superclass PerangkatPintar. 
+walaupun objek yang dibuat adalah LampuPintar, 
+Java tetap pake tipe referensi (PerangkatPintar) buat nentuin method apa aja yang bisa dipanggil saat compile. 
+inilah yang menyebabkan method ga dikenali.
+
+buat memperbaiki error tersebut, ada dua cara. 
+Pertama, melakukan downcasting dari PerangkatPintar ke LampuPintar biar method aturKecerahan() bisa diakses. 
+Kedua, mengubah tipe referensi variabel jadi LampuPintar sejak awal sehingga method tersebut langsung dikenali tanpa perlu casting.
